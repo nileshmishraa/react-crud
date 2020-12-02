@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React from "react";
+//import HeaderNew from "./components/ComponentsNew/HeaderNew";
+import Home from "./components/ComponentsNew/Home";
+import UserNew from "./components/ComponentsNew/UserNew";
+import AllUsers from "./components/ComponentsNew/AllUsers";
+import AddUser from "./components/ComponentsNew/AddUser";
+import {Col, Container, Row} from "reactstrap";
+import HeaderNew from "./components/ComponentsNew/HeaderNew";
+import Menu from "./components/ComponentsNew/menu";
+import {BrowserRouter as Router, Link, Switch, Route} from "react-router-dom";
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Router>
+            <Container>
+                <HeaderNew/>
+                <Row>
+                    <Col md={4}><h2> <Menu/></h2> </Col>
+                    <Col md={8}>
+                        <Route path="/" component={Home} exact/>
+                        <Route path="/add-user" component={AddUser} exact/>
+                        <Route path="/view-user" component={AllUsers} exact/>
+                    </Col>
+                </Row>
+            </Container>
+        </Router>
     </div>
   );
 }
