@@ -2,6 +2,8 @@ import React, {Component, useEffect} from 'react';
 import {Button, Card, CardBody, CardSubtitle, CardText, Container} from "reactstrap";
 import axios from "axios";
 import URL_Boot from "../../services/url";
+import ModalExample from "./ModalExample";
+import {Link} from "react-router-dom";
 
 
 
@@ -17,6 +19,16 @@ const UserNew = ({user, update })=> {
         );
     }
 
+    // const updateUser = (id) => {
+    //     axios.put(`${URL_Boot}/add/${id}`).then(
+    //         (response)=> {
+    //             console.log(response);
+    //             update(id);
+    //         },
+    //         (error) => console.log(error)
+    //     );
+    // }
+
     return (
         <Card>
             <CardBody>
@@ -26,9 +38,10 @@ const UserNew = ({user, update })=> {
                 <Container>
                     <Button color="danger" onClick = {
                         () =>{ deleteUser(user.id) }
-
                     }>Delete</Button>
-                    <Button color="warning ml-3"> Update</Button>
+
+
+                    <ModalExample buttonLabel="Update"/>
                 </Container>
             </CardBody>
         </Card>

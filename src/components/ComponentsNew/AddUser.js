@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, {Component, Fragment, useState} from 'react';
+import React, {Fragment, useState} from 'react';
 import {Button, Container, Form, FormGroup, Input, Label} from "reactstrap";
 import axios from "axios";
 
@@ -9,7 +9,7 @@ const AddUser = ()=>{
 
     //handle form
     const handleForm = (e)=> {
-        console.log( users);
+        console.log(users);
         postData(users);
         e.preventDefault();
     };

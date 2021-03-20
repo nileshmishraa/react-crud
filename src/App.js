@@ -3,13 +3,13 @@ import './App.css';
 import React from "react";
 //import HeaderNew from "./components/ComponentsNew/HeaderNew";
 import Home from "./components/ComponentsNew/Home";
-import UserNew from "./components/ComponentsNew/UserNew";
 import AllUsers from "./components/ComponentsNew/AllUsers";
 import AddUser from "./components/ComponentsNew/AddUser";
 import {Col, Container, Row} from "reactstrap";
 import HeaderNew from "./components/ComponentsNew/HeaderNew";
 import Menu from "./components/ComponentsNew/menu";
-import {BrowserRouter as Router, Link, Switch, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+
 
 
 

@@ -1,12 +1,11 @@
-import React, {Component, useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import UserNew from "./UserNew";
 import axios from "axios";
-import URL_Boot from "../../services/url";
 
 const AllUsers = () => {
 
     useEffect(() => {
-        document.title = "View All Users"
+        document.title = "View All Users ||CRUD"
     }, []);
 
     //GET Method
@@ -15,9 +14,8 @@ const AllUsers = () => {
             (response) => {
                 console.log(response);
                 setUsers(response.data);
-
                 },
-            (error) => { console.log(error)})
+            (error) => { console.log(error)} )
     }
 
     //Calling GET
@@ -36,15 +34,19 @@ const AllUsers = () => {
 
     //removing user from UI
     const removeUserById = (id) => {
-        setUsers(users.filter( (c) => c.id !== id));
+        setUsers( users.filter( (c) => c.id !== id) );
     }
+
+    // const updateUserById = (id) => {
+    //     setUsers(users.)
+    // }
 
 
     return(
         <div>
             <h1> All users </h1>
             {
-                users.length>0 ? users.map((item)=> <UserNew key={item.id} user={item} update={removeUserById}/> ): "No users available"
+                users.length>0 ? users.map((item) => <UserNew key={item.id} user={item} update={removeUserById}/> ): "No users available"
             }
         </div>
     );
