@@ -1,10 +1,9 @@
+// eslint-disable-next-line no-unused-vars
 import React, {Component, useEffect} from 'react';
 import {Button, Card, CardBody, CardSubtitle, CardText, Container} from "reactstrap";
 import axios from "axios";
 import URL_Boot from "../../services/url";
 import ModalExample from "./ModalExample";
-import {Link} from "react-router-dom";
-
 
 
 const UserNew = ({user, update })=> {
